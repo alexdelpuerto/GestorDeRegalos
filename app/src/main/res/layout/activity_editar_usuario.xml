@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="regalos.example.com.gestorderegalos.EditarUsuario"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+
+    <ImageButton
+        android:id="@+id/galeriaButton"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/ic_menu_gallery"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/camaraButton"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/camaraButton"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/camaraButton"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/camaraButton"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/ic_menu_camera"
+        android:layout_marginStart="59dp"
+        tools:ignore="ContentDescription,MissingConstraints"
+        app:layout_constraintLeft_toRightOf="@+id/imagenEdit"
+        android:layout_marginLeft="59dp"
+        app:layout_constraintTop_toTopOf="@+id/imagenEdit"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/fotoEditTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/foto_de_perfil"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEditTV"
+        android:layout_marginTop="56dp"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="53dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="32dp" />
+
+    <ImageView
+        android:id="@+id/imagenEdit"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEditTV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account_circle"
+        tools:ignore="ContentDescription"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/passwordEditTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contrasenia"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditET"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="32dp" />
+
+    <EditText
+        android:id="@+id/passwordEditET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/nombreEditTV"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordEditTV" />
+
+    <TextView
+        android:id="@+id/nombreEditTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/nombreEditET"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordEditET" />
+
+    <EditText
+        android:id="@+id/nombreEditET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/apellidosEditTV"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/nombreEditTV" />
+
+    <TextView
+        android:id="@+id/apellidosEditTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apellidos"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/apellidosEditET"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/nombreEditET" />
+
+    <EditText
+        android:id="@+id/apellidosEditET"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/correoEditTV"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/apellidosEditTV" />
+
+    <TextView
+        android:id="@+id/correoEditTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/correoEditET"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/apellidosEditET" />
+
+    <EditText
+        android:id="@+id/correoEditET"
+        android:layout_width="291dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/editarbutton"
+        app:layout_constraintLeft_toLeftOf="@+id/correoEditTV"
+        app:layout_constraintRight_toRightOf="@+id/nombreEditET"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/editarbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editar"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="32dp" />
+
+</android.support.constraint.ConstraintLayout>

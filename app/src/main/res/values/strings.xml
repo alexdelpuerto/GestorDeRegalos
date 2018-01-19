@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">GestorDeRegalos</string>
+
+    <!--Elementos  del activity Login-->
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="user">User</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="password">Password</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="registro">Registro</string>
+
+    <!--Elementos del activity Registro -->
+    <string name="nombre_de_usuarioAst">Nombre de usuario (*)</string>
+    <string name="contraseniaAst">Contraseña (*)</string>
+    <string name="email">Correo electrónico</string>
+    <string name="telefono">Teléfono</string>
+    <string name="campos_obligatorios">Los campos marcados con (*) son obligatorios</string>
+    <string name="registrarse">Registrarse</string>
+
+    <!-- Elementos de la pantalla principal -->
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="action_ajustes">Ajustes</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="amigos">Amigos</string>
+    <string name="pagos">Pagos</string>
+    <string name="eventos">Eventos</string>
+    <string name="sesion">Sesión</string>
+    <string name="regalosQuedan">/</string>
+    <string name="cumple_de">Cumple de</string>
+    <string name="quedan">Quedan</string>
+    <string name="debes">DEBES</string>
+    <string name="te_deben">TE DEBEN</string>
+    <string name="nuevo_evento">Nuevo Evento</string>
+    <string name="nombre_evento">Nombre Evento</string>
+    <string name="presupuesto">Presupuesto</string>
+    <string name="crear_evento">Crear Evento</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="nombre">Nombre</string>
+    <string name="editar">Editar</string>
+    <string name="mantener_sesion_iniciada">Mantener sesión iniciada</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">cancelar</string>
+    <string name="no_tienes_nuevas_solicitudes_de_amistad">No tienes nuevas solicitudes de amistad</string>
+    <string name="quiere_agregarte_como_amigo">quiere agregarte como amigo</string>
+    <string name="a_adir">Añadir</string>
+    <string name="foto_de_perfil">Foto de Perfil</string>
+    <string name="crear_regalo">Crear regalo</string>
+    <string name="esta_es_la_descripci_n_del_regalo_puede_haber_saltos_de_l_nea">Esta es la descripción del regalo. Puede haber saltos de línea</string>
+    <string name="nombre_2pts">Nombre:</string>
+    <string name="precio">Precio:</string>
+    <string name="euro">€</string>
+    <string name="salir">Salir</string>
+</resources>

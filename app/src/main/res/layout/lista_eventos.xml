@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/nombreEventoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cumple_de"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="196dp"
+        android:layout_height="0dp"
+        android:progress="50"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/dineroFaltaTV"
+        app:layout_constraintLeft_toLeftOf="@+id/nombreEventoTV"
+        app:layout_constraintTop_toBottomOf="@+id/nombreEventoTV"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/dineroFaltaTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quedan"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="31dp"
+        app:layout_constraintTop_toBottomOf="@+id/nombreEventoTV"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/progreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/regalosQuedan"
+        android:layout_marginStart="16dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="7dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:layout_constraintLeft_toRightOf="@+id/progressBar"
+        android:layout_marginLeft="16dp" />
+
+    <ImageButton
+        android:id="@+id/borrarEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:contentDescription=""
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintLeft_toRightOf="@+id/progreso"
+        app:srcCompat="@drawable/ic_delete"
+        tools:ignore="ContentDescription"
+        tools:layout_constraintLeft_creator="1" />
+</android.support.constraint.ConstraintLayout>

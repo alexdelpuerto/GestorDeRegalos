@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="regalos.example.com.gestorderegalos">
+
+    <!-- Permiso internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Permisos para leer del telefono y escribir, para la galería -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Registro"
+            android:label="Registro">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Eventos.NuevoEvento"
+            android:label="@string/nuevo_evento" />
+        <activity
+            android:name=".EditarUsuario"
+            android:label="Editar Usuario" />
+
+        <service android:name=".Firebase.FirebaseID">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.INSTANCE_ID_EVENT"
+                    android:enabled="true"
+                    android:exported="true" />
+            </intent-filter>
+        </service>
+        <service android:name=".Firebase.FirebaseMensajes">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT"
+                    android:enabled="true"
+                    android:exported="true" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Amigos.NuevoAmigo"
+            android:label="Nuevo Amigo" />
+        <activity
+            android:name=".Regalos.RegaloRecycler"
+            android:label="Regalos" />
+        <activity
+            android:name=".Regalos.VistaRegalo"
+            android:label="Vista Regalo" />
+        <activity android:name=".Amigos.AgregarAmigos" />
+        <activity android:name=".Regalos.NuevoRegalo"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="regalos.example.com.gestorderegalos.Regalos.RegaloRecycler"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/agregarRegalo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:clickable="true"
+        android:tint="#000000"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/agregarAmigos"
+        app:layout_constraintRight_toRightOf="@+id/recyclerRegalos"
+        app:srcCompat="@drawable/ic_gift"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/actualizarReg"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        app:backgroundTint="@android:color/white"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_refresh"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/agregarRegalo"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/agregarRegalo"
+        app:layout_constraintTop_toTopOf="@+id/recyclerRegalos" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerRegalos"
+        android:layout_width="0dp"
+        android:layout_height="490dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/agregarAmigos"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:tint="#000000"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/actualizarReg"
+        app:layout_constraintRight_toRightOf="@+id/actualizarReg"
+        app:srcCompat="@drawable/ic_action_users"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+</android.support.constraint.ConstraintLayout>

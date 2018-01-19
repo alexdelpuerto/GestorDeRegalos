@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <ImageView
+        android:id="@+id/fotoPerfilNotify"
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription=""
+        android:src="@drawable/ic_account_circle"
+        tools:ignore="ContentDescription"
+        app:layout_constraintRight_toLeftOf="@+id/notificacionTV"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/notificacionTV"
+        app:layout_constraintTop_toBottomOf="@+id/notificacionTV"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/notificacionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+
+        android:text="Nick"
+
+        android:textSize="16sp"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/quiereAgregarte"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:id="@+id/quiereAgregarte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quiere_agregarte_como_amigo"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/notificacionTV" />
+
+    <Button
+        android:id="@+id/aceptarNotifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/aceptar"
+        android:textColor="@android:color/white"
+        tools:targetApi="lollipop"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/quiereAgregarte"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/quiereAgregarte" />
+
+    <Button
+        android:id="@+id/cancelarNotifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/cancelar"
+        android:textColor="@android:color/white"
+        tools:targetApi="lollipop"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/quiereAgregarte"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/quiereAgregarte" />
+
+</android.support.constraint.ConstraintLayout>
