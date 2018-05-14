@@ -6,7 +6,7 @@ package regalos.example.com.gestorderegalos;
 
 public final class URL {
     //Eventos
-    public static final String CREAR_EVENTOS = "https://alexregalos.000webhostapp.com/PHP/CrearEventos.php";
+    public static final String CREAR_EVENTOS = "https://alexregalos.000webhostapp.com/PHP/Eventos_Crear.php";
     public static final String EVENTOS_GET = "https://alexregalos.000webhostapp.com/PHP/Eventos_Get.php?id_usuario=";
     public static final String EVENTOS_DELETE = "https://alexregalos.000webhostapp.com/PHP/Eventos_Delete.php";
 
@@ -27,7 +27,7 @@ public final class URL {
     public static final String CREAR_SOLICITUD = "https://alexregalos.000webhostapp.com/PHP/Amigos_CrearSolicitud.php";
     public static final String ACEPTAR_SOLICITUD = "https://alexregalos.000webhostapp.com/PHP/Amigos_AceptarSolicitud.php";
     public static final String CANCELAR_SOLICITUD = "https://alexregalos.000webhostapp.com/PHP/Amigos_CancelarSolicitud.php";
-    public static final String CREAR_PERT_MULT = "https://alexregalos.000webhostapp.com/PHP/CrearPertMult.php";
+    public static final String CREAR_PERT_MULT = "https://alexregalos.000webhostapp.com/PHP/Eventos_CrearPertMult.php";
     public static final String AMIGOS_GET_AGREGAR = "https://alexregalos.000webhostapp.com/PHP/Amigos_GetAgregar.php?";
 
     //Notificaciones
