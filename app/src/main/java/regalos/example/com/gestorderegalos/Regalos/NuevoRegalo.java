@@ -2,6 +2,7 @@ package regalos.example.com.gestorderegalos.Regalos;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.ImageView;
 import com.android.volley.RequestQueue;
 import net.gotev.uploadservice.ServerResponse;
 import net.gotev.uploadservice.UploadInfo;
+
+import java.util.regex.Pattern;
+
 import regalos.example.com.gestorderegalos.GotevUploadServiceReg;
 import regalos.example.com.gestorderegalos.R;
 import regalos.example.com.gestorderegalos.URL;
@@ -63,16 +67,41 @@ public class NuevoRegalo extends AppCompatActivity {
         galeriaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotevUploadServiceReg.actualizarParametros(nombreReg.getText().toString(), descReg.getText().toString(), precioReg.getText().toString(), id_evento);
-                gotevUploadServiceReg.subirFotoGaleria();
+
+                String expRegPresu = "^[0-9]+([.][0-9]+)?$";
+                String nombreReplace = nombreReg.getText().toString().replace(" ", "");
+
+                if(Pattern.matches(expRegPresu, precioReg.getText()) && !nombreReplace.equals("")){
+                    gotevUploadServiceReg.actualizarParametros(nombreReg.getText().toString(), descReg.getText().toString(), precioReg.getText().toString(), id_evento);
+                    gotevUploadServiceReg.subirFotoGaleria();
+                }
+                else{
+                    AlertDialog.Builder dialogoError = new AlertDialog.Builder(NuevoRegalo.this);
+                    dialogoError.setTitle("Error");
+                    dialogoError.setMessage("Ha introducido un campo incorrecto o vacío");
+                    dialogoError.show();
+                }
+
             }
         });
 
         camaraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotevUploadServiceReg.actualizarParametros(nombreReg.getText().toString(), descReg.getText().toString(), precioReg.getText().toString(), id_evento);
-                gotevUploadServiceReg.subirFotoCamara();
+
+                String expRegPresu = "^[0-9]+([.][0-9]+)?$";
+                String nombreReplace = nombreReg.getText().toString().replace(" ", "");
+
+                if(Pattern.matches(expRegPresu, precioReg.getText()) && !nombreReplace.equals("")){
+                    gotevUploadServiceReg.actualizarParametros(nombreReg.getText().toString(), descReg.getText().toString(), precioReg.getText().toString(), id_evento);
+                    gotevUploadServiceReg.subirFotoCamara();
+                }
+                else{
+                    AlertDialog.Builder dialogoError = new AlertDialog.Builder(NuevoRegalo.this);
+                    dialogoError.setTitle("Error");
+                    dialogoError.setMessage("Ha introducido un campo incorrecto o vacío");
+                    dialogoError.show();
+                }
             }
         });
         GotevUploadServiceReg.verifyStoragePermissions(this);
