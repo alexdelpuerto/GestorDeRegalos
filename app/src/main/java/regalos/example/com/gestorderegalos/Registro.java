@@ -1,6 +1,7 @@
 package regalos.example.com.gestorderegalos;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,9 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
+import java.util.regex.Pattern;
+
+import regalos.example.com.gestorderegalos.Regalos.NuevoRegalo;
 
 public class Registro extends AppCompatActivity {
 
@@ -55,44 +59,56 @@ public class Registro extends AppCompatActivity {
 
     public void registrar(final String user, String password, String correo, String nombre, String apellidos){
         //Si no hay ningun user con ese nombre en la BD y si la contraseña no está vacía llamamos al main
-        if ((!password.equals("")) && (!user.equals(""))) {
-            String Token = FirebaseInstanceId.getInstance().getToken();
+        if (user.indexOf(" ")<0){
+            //Comprueba si se introduce un espacio en blanco
+            if (!password.equals("") && !user.equals("") && !nombre.equals("") && !apellidos.equals("")) {
+                String Token = FirebaseInstanceId.getInstance().getToken();
 
-            HashMap<String, String> hashMap = new HashMap<>();
-            hashMap.put("id_usuario", user);
-            hashMap.put("password", password);
-            hashMap.put("nombre", nombre);
-            hashMap.put("apellidos", apellidos);
-            hashMap.put("correo", correo);
-            hashMap.put("token", Token);
+                HashMap<String, String> hashMap = new HashMap<>();
+                hashMap.put("id_usuario", user);
+                hashMap.put("password", password);
+                hashMap.put("nombre", nombre);
+                hashMap.put("apellidos", apellidos);
+                hashMap.put("correo", correo);
+                hashMap.put("token", Token);
 
-            JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, URL.REGISTRO_INSERT, new JSONObject(hashMap), new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject datos) {
-                    try {
-                        String estado = datos.getString("resultado");
-                        if (estado.equalsIgnoreCase("Usuario registrado correctamente")) {
-                            Toast.makeText(Registro.this, estado, Toast.LENGTH_SHORT).show();
-                            lanzarMain(user);
-                        } else {
-                            Toast.makeText(Registro.this, estado, Toast.LENGTH_SHORT).show();
+                JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, URL.REGISTRO_INSERT, new JSONObject(hashMap), new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject datos) {
+                        try {
+                            String estado = datos.getString("resultado");
+                            if (estado.equalsIgnoreCase("Usuario registrado correctamente")) {
+                                Toast.makeText(Registro.this, estado, Toast.LENGTH_SHORT).show();
+                                lanzarMain(user);
+                            } else {
+                                Toast.makeText(Registro.this, estado, Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            Toast.makeText(Registro.this, "No se pudo hacer el registro: el nombre de usuario ya existe", Toast.LENGTH_SHORT).show();
                         }
-                    } catch (JSONException e) {
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
                         Toast.makeText(Registro.this, "No se pudo hacer el registro: el nombre de usuario ya existe", Toast.LENGTH_SHORT).show();
                     }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(Registro.this, "No se pudo hacer el registro: el nombre de usuario ya existe", Toast.LENGTH_SHORT).show();
-                }
-            });
+                });
 
-            volleyRP.addToQueue(solicitud, requestQueue, this, volleyRP);
+                volleyRP.addToQueue(solicitud, requestQueue, this, volleyRP);
+            }
+            else {
+                AlertDialog.Builder dialogoError2 = new AlertDialog.Builder(Registro.this);
+                dialogoError2.setTitle("Error");
+                dialogoError2.setMessage("Ha introducido un campo vacío");
+                dialogoError2.show();
+            }
+        } else{
+            AlertDialog.Builder dialogoError = new AlertDialog.Builder(Registro.this);
+            dialogoError.setTitle("Error");
+            dialogoError.setMessage("El nombre de usuario no puede tener espacios en blanco");
+            dialogoError.show();
         }
-        else {
-            Toast.makeText(Registro.this, "El usuario ni la contraseña pueden estar vacíos", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     private void lanzarMain(String user) {

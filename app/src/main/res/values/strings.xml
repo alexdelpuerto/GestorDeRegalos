@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GestorDeRegalos</string>
+    <string name="app_name">Gift Me</string>
 
     <!--Elementos  del activity Login-->
     <string name="nombre_de_usuario">Nombre de usuario</string>
@@ -16,6 +16,8 @@
     <string name="telefono">Teléfono</string>
     <string name="campos_obligatorios">Los campos marcados con (*) son obligatorios</string>
     <string name="registrarse">Registrarse</string>
+    <string name="nombreAst">Nombre (*)</string>
+    <string name="apellidosAst">Apellidos (*)</string>
 
     <!-- Elementos de la pantalla principal -->
 

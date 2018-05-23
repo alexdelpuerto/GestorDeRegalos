@@ -2,6 +2,7 @@ package regalos.example.com.gestorderegalos;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -95,11 +96,14 @@ public class EditarUsuario extends AppCompatActivity {
         editarBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!password.getText().toString().trim().equals("")){
+                if (!password.getText().toString().trim().equals("") && !nombre.getText().toString().equals("") && !apellidos.getText().toString().equals("")){
                     editar(password.getText().toString(), nombre.getText().toString(), apellidos.getText().toString(), correo.getText().toString());
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "La contraseña no puede estar vacía", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder dialogoError = new AlertDialog.Builder(EditarUsuario.this);
+                    dialogoError.setTitle("Error");
+                    dialogoError.setMessage("Los campos contraseña, nombre y apellidos no pueden quedarse vacíos");
+                    dialogoError.show();
                 }
             }
         });
