@@ -2,10 +2,14 @@ package regalos.example.com.gestorderegalos.Eventos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.regex.Pattern;
+
 import regalos.example.com.gestorderegalos.R;
 
 public class NuevoEvento extends AppCompatActivity {
@@ -25,7 +29,18 @@ public class NuevoEvento extends AppCompatActivity {
         newEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                crearEvento(nombreEventoET.getText().toString(), presupuestoET.getText().toString());
+                String expRegPresu = "^[0-9]+([.][0-9]+)?$";
+                String nombreReplace = nombreEventoET.getText().toString().replace(" ", "");
+
+                if(Pattern.matches(expRegPresu, presupuestoET.getText()) && !nombreReplace.equals("")){
+                    crearEvento(nombreEventoET.getText().toString(), presupuestoET.getText().toString());
+                }
+                else{
+                    AlertDialog.Builder dialogoError = new AlertDialog.Builder(NuevoEvento.this);
+                    dialogoError.setTitle("Error");
+                    dialogoError.setMessage("Ha introducido un campo incorrecto o vacío");
+                    dialogoError.show();
+                }
             }
         });
 
