@@ -7,7 +7,8 @@ package regalos.example.com.gestorderegalos.Eventos;
 public class Evento {
     private String id;
     private String nombreEvento;
-    private String dineroFalta;
+    private double gastado;
+    private double presupuesto;
     private int maxProgres;
     private int minProgres;
     private String creador;
@@ -41,8 +42,12 @@ public class Evento {
         return nombreEvento;
     }
 
-    public String getDineroFalta() {
-        return dineroFalta;
+    public double getGastado() {
+        return gastado;
+    }
+
+    public double getPresupuesto() {
+        return presupuesto;
     }
 
     public int getMaxProgres(){
@@ -61,8 +66,12 @@ public class Evento {
         this.nombreEvento = nombreEvento;
     }
 
-    public void setDineroFalta(String dineroFalta) {
-        this.dineroFalta = dineroFalta;
+    public void setGastado(double gastado) {
+        this.gastado = gastado;
+    }
+
+    public void setPresupuesto(double presupuesto) {
+        this.presupuesto = presupuesto;
     }
 
     public void setMaxProgres(int maxProgres){

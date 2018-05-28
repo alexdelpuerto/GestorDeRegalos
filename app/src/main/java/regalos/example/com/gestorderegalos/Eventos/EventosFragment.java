@@ -252,7 +252,8 @@ public class EventosFragment extends Fragment {
             try {
                 eventoAux.setId(jsonArray.getJSONObject(i).getString("id_evento"));
                 eventoAux.setNombreEvento(jsonArray.getJSONObject(i).getString("nombre"));
-                eventoAux.setDineroFalta("Presupuesto: "+jsonArray.getJSONObject(i).getString("presupuesto")+"€");
+                eventoAux.setPresupuesto(jsonArray.getJSONObject(i).getDouble("presupuesto"));
+                eventoAux.setGastado(jsonArray.getJSONObject(i).getDouble("Gastado"));
                 eventoAux.setCreador(jsonArray.getJSONObject(i).getString("creador"));
                 eventoAux.setMaxProgres(jsonArray.getJSONObject(i).getInt("Num_regalos"));
                 eventoAux.setMinProgres(jsonArray.getJSONObject(i).getInt("Regalos_comp"));

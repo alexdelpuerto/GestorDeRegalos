@@ -54,7 +54,12 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.EventosVie
     //Asociar los views con los holder
     public void onBindViewHolder(final EventosViewHolder holder, final int position) {
         holder.nombreEvento.setText(listaEventos.get(position).getNombreEvento());
-        holder.dineroFalta.setText(listaEventos.get(position).getDineroFalta());
+
+        double dineroQueda = (listaEventos.get(position).getPresupuesto())-(listaEventos.get(position).getGastado());
+        dineroQueda = (double)Math.round(dineroQueda * 100d)/100d;
+
+        holder.dineroFalta.setText("Quedan "+dineroQueda+"€");
+
         holder.progressBar.setProgress(listaEventos.get(position).getMinProgres());
         holder.progressBar.setMax(listaEventos.get(position).getMaxProgres());
         holder.progreso.setText(listaEventos.get(position).getMinProgres()+"/"+listaEventos.get(position).getMaxProgres());
